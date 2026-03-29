@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Желябина Ольга Владимировна — врач-ревматолог, к.м.н.</title>
+  <meta name="description" content="Запись на консультацию к врачу-ревматологу Желябиной Ольге Владимировне: 3 очные площадки и онлайн-приём." />
+  <style>
+    :root {
+      --bg: #f5f9fc;
+      --card: #ffffff;
+      --primary: #0a6fb6;
+      --primary-hover: #07578e;
+      --text: #1a2b3c;
+      --muted: #5a6d80;
+      --accent: #dff1ff;
+      --shadow: 0 14px 30px rgba(8, 66, 107, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef6fc 0%, #f8fbff 45%, #ffffff 100%);
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 252, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(10, 111, 182, 0.12);
+      z-index: 100;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .doctor-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid rgba(10, 111, 182, 0.3);
+    }
+
+    .hero {
+      padding: 72px 0 54px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      background: var(--accent);
+      color: #0a4e7e;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10, 111, 182, 0.12);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 10px;
+    }
+
+    section {
+      padding: 26px 0 48px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+    }
+
+    .section-intro {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .locations {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .location-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid rgba(10, 111, 182, 0.13);
+      padding: 20px;
+      box-shadow: 0 8px 22px rgba(10, 111, 182, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .location-type {
+      width: fit-content;
+      background: #edf7ff;
+      color: #0a5b94;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .location-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .location-meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin: 0;
+    }
+
+    .about {
+      background: #f4fafe;
+      border-top: 1px solid rgba(10, 111, 182, 0.13);
+      border-bottom: 1px solid rgba(10, 111, 182, 0.13);
+      padding: 52px 0;
+      margin-top: 8px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .about-item {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid rgba(10, 111, 182, 0.1);
+    }
+
+    .cta {
+      padding: 54px 0 68px;
+    }
+
+    .cta-box {
+      background: linear-gradient(120deg, #0d72ba, #0a5e98);
+      color: #fff;
+      border-radius: 20px;
+      padding: clamp(20px, 5vw, 36px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .cta-box p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    footer {
+      padding: 16px 0 28px;
+      color: #7a8794;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .locations {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div>
+        <div class="doctor-name">Желябина Ольга Владимировна</div>
+        <div class="subtitle">Врач-ревматолог, к.м.н., научный сотрудник</div>
+      </div>
+      <a class="btn" href="#locations">Записаться на приём</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <h1>Современная ревматология с вниманием к каждому пациенту</h1>
+        <p>Консультации при болях в суставах, системных заболеваниях соединительной ткани, подбор терапии и длительное сопровождение пациентов.</p>
+        <div class="hero-badges">
+          <span class="badge">Кандидат медицинских наук</span>
+          <span class="badge">Стаж 25 лет</span>
+          <span class="badge">Научный сотрудник</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#locations">Выбрать место приёма</a>
+          <a class="btn secondary" href="#about">О враче</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>Быстрая запись</h3>
+        <p>Выберите удобный формат: очная консультация в одной из 3 клиник или онлайн-приём.</p>
+        <a class="btn" href="#locations">Открыть варианты записи</a>
+      </aside>
+    </section>
+
+    <section id="locations" class="container">
+      <h2 class="section-title">Места приёма и онлайн-консультация</h2>
+      <p class="section-intro">Нажмите на нужную кнопку записи — заявка будет отправлена в выбранную клинику или онлайн-сервис.</p>
+
+      <div class="locations">
+        <article class="location-card">
+          <span class="location-type">Очный приём</span>
+          <h3>Клиника «РевмаМед Центр»</h3>
+          <p class="location-meta">Москва, ул. Профсоюзная, 45 • Пн, Ср, Пт</p>
+          <a class="btn" href="https://example.com/booking/revmamed" target="_blank" rel="noopener">Записаться в РевмаМед</a>
+        </article>
+
+        <article class="location-card">
+          <span class="location-type">Очный приём</span>
+          <h3>Многопрофильный медцентр «Север»</h3>
+          <p class="location-meta">Москва, Ленинградский проспект, 22 • Вт, Чт</p>
+          <a class="btn" href="https://example.com/booking/sever" target="_blank" rel="noopener">Записаться в медцентр «Север»</a>
+        </article>
+
+        <article class="location-card">
+          <span class="location-type">Очный приём</span>
+          <h3>Клиника «Семейная ревматология»</h3>
+          <p class="location-meta">Москва, ул. Краснопролетарская, 16 • Сб</p>
+          <a class="btn" href="https://example.com/booking/family-rheuma" target="_blank" rel="noopener">Записаться в «Семейную ревматологию»</a>
+        </article>
+
+        <article class="location-card">
+          <span class="location-type">Онлайн</span>
+          <h3>Онлайн-консультация (видеоприём)</h3>
+          <p class="location-meta">Из любой точки мира • Ежедневно по предварительной записи</p>
+          <a class="btn" href="https://example.com/booking/online" target="_blank" rel="noopener">Записаться онлайн</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">О враче</h2>
+        <div class="about-grid">
+          <div class="about-item">Желябина Ольга Владимировна — врач-ревматолог, кандидат медицинских наук, научный сотрудник, стаж работы 25 лет.</div>
+          <div class="about-item">Специализация: ревматоидный артрит, псориатический артрит, системная красная волчанка, остеоартрит, подагра и другие ревматические заболевания.</div>
+          <div class="about-item">На консультации вы получите детальный разбор анализов, план дообследования и персонализированные рекомендации по лечению и образу жизни.</div>
+          <div class="about-item">Ведётся как первичный, так и повторный приём с динамическим наблюдением и корректировкой терапии.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta container">
+      <div class="cta-box">
+        <div>
+          <h2>Готовы записаться на консультацию?</h2>
+          <p>Выберите удобный формат приёма — очно в клинике или онлайн.</p>
+        </div>
+        <a class="btn secondary" href="#locations" aria-label="Перейти к местам записи">Перейти к кнопкам записи</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Желябина Ольга Владимировна. Информация на сайте не заменяет очную консультацию врача.
+  </footer>
+</body>
+</html>
